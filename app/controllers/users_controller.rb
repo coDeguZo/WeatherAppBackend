@@ -32,7 +32,6 @@ class UsersController < ApplicationController
   end
 
   def token_authenticate
-    byebug
       token = request.headers["Authenticate"]
       user = User.find(decode(token)["user_id"])
       render json: user
